@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#import <ImageIO/ImageIO.h>
 #import "ZXBinaryBitmap.h"
 #import "ZXCapture.h"
 #import "ZXCaptureDelegate.h"
@@ -29,13 +30,7 @@
 @property (nonatomic, strong) CALayer *binaryLayer;
 @property (nonatomic, assign) BOOL cameraIsReady;
 @property (nonatomic, assign) int captureDeviceIndex;
-
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
-@property (nonatomic, strong) __attribute__((NSObject)) dispatch_queue_t captureQueue;
-#else
 @property (nonatomic, strong) dispatch_queue_t captureQueue;
-#endif
-
 @property (nonatomic, assign) BOOL hardStop;
 @property (nonatomic, strong) AVCaptureDeviceInput *input;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *layer;
